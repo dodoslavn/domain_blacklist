@@ -1,6 +1,6 @@
 # Blacklist of domains marked for scam/spam activities
 You will need Unbound DNS server,  
-and you will need to add to the Unbound config /etc/unbound/unbound.conf , this line:
+and you will need to add to the Unbound config /etc/unbound/unbound.conf , in the "server:" part, this line:
 > include: /etc/unbound/blacklist/*.txt
 ## Installation
 > \# move to some permanent folder  
