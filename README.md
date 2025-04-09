@@ -5,4 +5,4 @@ and you will need to add to the unbound config /etc/unbound/unbound.conf , this 
 ## Installation
 > \# move to some permanent folder  
 > git clone  
-> ./scripts/  
+> ./scripts/install.sh
