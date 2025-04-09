@@ -4,7 +4,7 @@ cd "$(dirname "$0")"
 
 . ../conf/config.sh
 
-rm ../tmp/*.txt
+rm -f ../tmp/*.txt
 
 for S in $LIST;
 	do
