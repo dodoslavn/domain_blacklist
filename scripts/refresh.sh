@@ -10,6 +10,7 @@ cd "$(dirname "$0")"
 
 . ../conf/config.sh
 
+mkdir -p ../tmp/ 
 rm -f ../tmp/*.txt
 
 for S in $LIST;
