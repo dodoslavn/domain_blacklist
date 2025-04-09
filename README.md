@@ -3,6 +3,7 @@ You will need Unbound DNS server,
 and you will need to add to the Unbound config /etc/unbound/unbound.conf , in the "server:" part, this line:
 > include: /etc/unbound/blacklist/*.txt
 ## Installation
+> su - root
 > \# move to some permanent folder  
 > git clone https://github.com/dodoslavn/domain_blacklist.git  
 > ./scripts/install.sh
