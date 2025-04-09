@@ -1,5 +1,11 @@
 #/bin/bash
 
+if [ "$( whoami )" != "root" ]
+  then
+  echo "ERROR: You need to be root!"
+  exit 1
+  fi
+
 cd "$(dirname "$0")"
 
 . ../conf/config.sh
