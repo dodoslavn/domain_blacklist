@@ -4,7 +4,7 @@ and you will need to add to the Unbound config /etc/unbound/unbound.conf , in th
 > include: /etc/unbound/blacklist/*.txt
 ## Installation
 > \# move to some permanent folder  
-> git clone https://github.com/dodoslavn/domain_blacklist.git
+> git clone https://github.com/dodoslavn/domain_blacklist.git  
 > ./scripts/install.sh
 ## Verification
 Get any blacklisted DNS record from the list
