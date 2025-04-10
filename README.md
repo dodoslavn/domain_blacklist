@@ -1,7 +1,7 @@
 # Blacklist of domains marked for scam/spam activities
 Script which downloads list of domains which are marked for bad activities, and set them to not translate in your DNS.
 ## Preparations/requirements
-You will need Unbound DNS server, (tested on Debian 12) 
+You will need Unbound DNS server, (tested on Debian 12)  
 and you will need to add to the Unbound config /etc/unbound/unbound.conf , in the "server:" part, this line:
 > include: /etc/unbound/blacklist/*.txt
 
