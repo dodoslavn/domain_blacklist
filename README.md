@@ -10,22 +10,22 @@ You will need Unbound DNS server, (tested on Debian ~~12~~ 13)
 ~~> chmod 755 /etc/unbound/blacklist/~~
 ~~> chown unbound:unbound 755 /etc/unbound/blacklist/~~
 ## Installation
-switch to "root" user (or use "sudo" in next steps)
+Switch to "root" user (or use "sudo" in next steps)
 > su - root
 
-move to some permanent folder, for example
+Move to some permanent folder, here is example  
 > cd /opt/git/
 
-clone this git repository
+Clone this git repository
 > git clone https://github.com/dodoslavn/domain_blacklist.git  
 
-modify service name of this script if you want
-editor ./conf/config.sh
+Modify service name of this script if you want  
+> editor ./conf/config.sh
 
-run the installation script
+Run the installation script  
 > ./scripts/install.sh
 
-start Unbound if it is not running  
+Start Unbound if it is not running  
 > systemctl start unbound
 
 ## Verification
