@@ -20,6 +20,9 @@ if ! [ -a "../conf/config.sh" ]
 
 . ../conf/config.sh
 
+cp ../conf/custom_blacklist.conf /etc/unbound/unbound.conf.d/custom_blacklist.conf
+mkdir /etc/unbound/unbound.conf.d/custom_blacklist.conf.d/
+
 . ../conf/custom-dns_blacklist.service.sh
 echo "$SERVICE" > /etc/systemd/system/"$SERVICE_NAME".service
 
