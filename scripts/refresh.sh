@@ -20,6 +20,6 @@ for S in $LIST;
 	../conf/"$S".sh
 	done
 
-cp ../tmp/*.txt /etc/unbound/blacklist/
+cp ../tmp/*.txt /etc/unbound/unbound.conf.d/custom_blacklist.conf.d/
 
 systemctl reload unbound
