@@ -19,7 +19,7 @@ Move to some permanent folder, here is example
 Clone this git repository
 > git clone https://github.com/dodoslavn/domain_blacklist.git  
 
-Modify service name of this script if you want  
+Modify systemd service name which will run this script if you want  
 > editor ./conf/config.sh
 
 Run the installation script  
