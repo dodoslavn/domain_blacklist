@@ -25,8 +25,8 @@ Modify service name of this script if you want
 Run the installation script  
 > ./scripts/install.sh
 
-Start Unbound if it is not running  
-> systemctl start unbound
+Start or Reload Unbound if it is not running  
+> systemctl restart unbound
 
 ## Verification
 Check status of execution of this script (here i use the default service name)
