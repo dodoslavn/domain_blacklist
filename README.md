@@ -49,3 +49,11 @@ Now lets test our own DNS:
 > dig +short @127.0.0.1 000aproxy.on-4.com
 > 
 This should return nothing, meaning the blacklist is working. You can now start using this DNS in your devices.
+
+## Uninstal
+If you want to get rid of it for whatever reason:  
+> rm -rf /etc/unbound/unbound.conf.d/custom_blacklist.conf*
+
+Here you need to check how did you named your SystemD service in the conf/config.sh file, but if you havent touched it, you can remove the service via:
+
+> rm -rf /etc/systemd/system/custom-dns_blacklist.*
