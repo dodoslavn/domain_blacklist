@@ -11,7 +11,7 @@ cd "$(dirname "$0")"
 . ../conf/config.sh
 
 mkdir -p ../tmp/ 
-rm -f ../tmp/*.txt
+rm -f ../tmp/*.conf
 
 for S in $LIST;
 	do
@@ -20,6 +20,6 @@ for S in $LIST;
 	../conf/"$S".sh
 	done
 
-cp ../tmp/*.txt /etc/unbound/unbound.conf.d/custom_blacklist.conf.d/
+cp ../tmp/*.conf /etc/unbound/unbound.conf.d/custom_blacklist.conf.d/
 
 systemctl reload unbound
