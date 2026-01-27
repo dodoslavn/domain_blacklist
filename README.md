@@ -1,5 +1,5 @@
 # Blacklist of domains marked for scam/spam activities
-Script which downloads list of domains which are marked for bad activities, and set them to not translate in your DNS. SystemD service to run this script periodically for domain list refresh included.
+Script which downloads list of domains which are marked for bad activities, and prevents them from resolving in your DNS. SystemD service to run this script periodically for domain list refresh included.
 ## Preparations/requirements
 You will need Unbound DNS server, SystemD and admin access (tested on Debian ~~12~~ 13)  
 ~~and you will need to add to the Unbound config /etc/unbound/unbound.conf , in the "server:" part, this line:~~
@@ -45,12 +45,12 @@ Test the domain in public DNS:
 > dig +short @8.8.8.8 000aproxy.on-4.com
 
 This should return some IP, meaning translation was successful and the domain fully works.  
-Now lets test our own DNS:
+Now let's test our own DNS:
 > dig +short @127.0.0.1 000aproxy.on-4.com
 > 
 This should return nothing, meaning the blacklist is working. You can now start using this DNS in your devices.
 
-## Uninstal
+## Uninstall
 If you want to get rid of it for whatever reason:  
 > rm -rf /etc/unbound/unbound.conf.d/custom_blacklist.conf*
 
