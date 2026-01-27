@@ -36,7 +36,7 @@ Check content of the files which contain blacklisted domains
 > head /etc/unbound/unbound.conf.d/custom_blacklist.conf.d/*
 
 Get any blacklisted DNS record from the list
-> head -1 /etc/unbound/blacklist/"$(ls /etc/unbound/blacklist/ | head -1)"
+> head -1 /etc/unbound/unbound.conf.d/custom_blacklist.conf.d/"$(ls /etc/unbound/unbound.conf.d/custom_blacklist.conf.d/ | head -1)"
 
 Example output:  
 > local-zone: "000aproxy.on-4.com" always_nxdomain  
