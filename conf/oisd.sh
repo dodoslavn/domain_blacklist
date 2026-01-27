@@ -1,9 +1,23 @@
 #!/bin/bash
 
-LIST=$( wget -O - https://big.oisd.nl/ 2>/dev/null )
+DOMAINS=$(wget -O - https://oisd.nl/includedlists/big/0 2>/dev/null )
+DOMAINS=$(echo "$DOMAINS" | grep 'Included in OISD' | cut -d'"' -f4 )
 
-LIST=$(echo "$LIST" | grep ^'||' | sort )
+echo " > Downloading lists from $( echo "$DOMAINS" | wc -l ) OISD sources"
 
-echo " > New list contains "$( echo "$LIST" | wc -l )" domains"
+true > ../tmp/oisd.raw
+for S in $( echo $DOMAINS )
+        do
+        echo -n .
+        wget -O - $S >> ../tmp/oisd.raw 2>/dev/null
+        done
+echo
 
-echo "$LIST" | sed 's/|//g' | sed 's/\^//' | sed 's/^/local-zone: "/' | sed 's/$/" always_nxdomain/' > ../tmp/oisd.conf
+cat ../tmp/oisd.raw | sed 's/<[^>]*>//g' | grep -v ^http | grep '\.' > ../tmp/oisd.clean
+
+sort ../tmp/oisd.clean -o ../tmp/oisd.sorted
+uniq ../tmp/oisd.sorted > ../tmp/oisd.conf
+
+sed 's/^/local-zone: "/' -i ../tmp/oisd.conf
+sed 's/$/" always_nxdomain/' -i ../tmp/oisd.conf
+echo " > New list contains "$( cat ../tmp/oisd.conf | wc -l ) domains
