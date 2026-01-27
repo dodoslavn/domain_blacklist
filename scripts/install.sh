@@ -29,6 +29,8 @@ echo "$SERVICE" > /etc/systemd/system/"$SERVICE_NAME".service
 . ../conf/custom-dns_blacklist.timer.sh
 echo "$TIMER" > /etc/systemd/system/"$SERVICE_NAME".timer
 
+../conf/static.sh
+
 systemctl daemon-reload
 systemctl enable $SERVICE_NAME
 systemctl start $SERVICE_NAME
