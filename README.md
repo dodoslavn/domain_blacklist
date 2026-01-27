@@ -28,6 +28,9 @@ Run the installation script
 Start or Reload Unbound if it is not running  
 > systemctl restart unbound
 
+Check if the Unbound is running  
+> systemctl status unbound
+
 ## Verification
 Check status of execution of this script (here i use the default service name)
 > systemctl status custom-dns_blacklist.service
