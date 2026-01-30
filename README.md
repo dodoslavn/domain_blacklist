@@ -9,6 +9,8 @@ You will need Unbound DNS server, SystemD and admin access (tested on Debian ~~1
 ~~> mkdir /etc/unbound/blacklist/~~
 ~~> chmod 755 /etc/unbound/blacklist/~~
 ~~> chown unbound:unbound 755 /etc/unbound/blacklist/~~
+
+It's important to note, many modern browsers do not use DNS configured in your OS, but use one of the public DNS servers using DNS over HTTPS.
 ## Installation
 Switch to "root" user (or use "sudo" in next steps)
 > su - root
