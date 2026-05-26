@@ -1,4 +1,4 @@
-# Blacklist of domains marked for scam/spam activities
+# Tool for blacklisting of domains marked for scam/spam activities
 Script which downloads list of domains which are marked for bad activities, and prevents them from resolving in your DNS. SystemD service to run this script periodically for domain list refresh included.
 ## Preparations/requirements
 You will need Unbound DNS server, SystemD and admin access (tested on Debian ~~12~~ 13)  
