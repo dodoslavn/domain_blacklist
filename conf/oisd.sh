@@ -9,7 +9,7 @@ true > ../tmp/oisd.raw
 for S in $( echo $DOMAINS )
         do
         echo -n .
-        wget -O - $S >> ../tmp/oisd.raw 2>/dev/null
+        wget -O - https://oisd.nl/$S >> ../tmp/oisd.raw 2>/dev/null
         done
 echo
 
