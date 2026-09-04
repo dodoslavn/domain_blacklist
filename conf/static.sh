@@ -6,8 +6,10 @@ POM=$( echo $POM | jq 'del( ."Error Trackers"."Sentry", ."OEMs"."Apple" )' )
 
 POM=$( echo $POM | jq -r '.. | arrays? | .[]' )
 
-echo "$POM" | sed 's/^/local-zone: "/' | sed 's/$/" always_nxdomain/' > /etc/unbound/unbound.conf.d/custom_blacklist.conf.d/static.conf
+echo "$POM" | sed 's/^/local-zone: "/' | sed 's/$/" always_nxdomain/' > ../tmp/static.conf
 
 echo "############"
 echo "### static"
 echo " > New static list contains $( cat /etc/unbound/unbound.conf.d/custom_blacklist.conf.d/static.conf | wc -l ) domains"
+
+mv ../tmp/static.conf ../tmp/static.conf.reference
