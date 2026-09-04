@@ -10,6 +10,6 @@ echo "$POM" | sed 's/^/local-zone: "/' | sed 's/$/" always_nxdomain/' > ../tmp/s
 
 echo "############"
 echo "### static"
-echo " > New static list contains $( cat /etc/unbound/unbound.conf.d/custom_blacklist.conf.d/static.conf | wc -l ) domains"
+echo " > New static list contains $( cat ../tmp/static.conf | wc -l ) domains"
 
 mv ../tmp/static.conf ../tmp/static.conf.reference
