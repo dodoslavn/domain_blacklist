@@ -8,8 +8,6 @@ POM=$( echo $POM | jq -r '.. | arrays? | .[]' )
 
 echo "$POM" | sed 's/^/local-zone: "/' | sed 's/$/" always_nxdomain/' > ../tmp/static.conf
 
-echo "############"
-echo "### static"
 echo " > New static list contains $( cat ../tmp/static.conf | wc -l ) domains"
 
 mv ../tmp/static.conf ../tmp/static.conf.reference
