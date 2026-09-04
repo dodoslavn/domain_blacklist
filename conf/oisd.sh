@@ -21,3 +21,5 @@ uniq ../tmp/oisd.sorted > ../tmp/oisd.conf
 sed 's/^/local-zone: "/' -i ../tmp/oisd.conf
 sed 's/$/" always_nxdomain/' -i ../tmp/oisd.conf
 echo " > New list contains "$( cat ../tmp/oisd.conf | wc -l ) domains
+
+mv ../tmp/oisd.conf ../tmp/oisd.conf.reference
