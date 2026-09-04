@@ -8,6 +8,8 @@ if [ "$( whoami )" != "root" ]
 
 cd "$(dirname "$0")"
 
+git pull
+
 . ../conf/config.sh
 
 if [ "$(systemctl is-active unbound.service)" = "inactive" ] 
