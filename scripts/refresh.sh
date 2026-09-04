@@ -36,7 +36,9 @@ for S in $LIST;
 	done
 
 
-cp ../tmp/*.conf /etc/unbound/unbound.conf.d/custom_blacklist.conf.d/
+
+cp ../tmp/*.conf.reference /etc/unbound/unbound.conf.d/custom_blacklist.conf.d/
+cat /etc/unbound/unbound.conf.d/custom_blacklist.conf.d/*.conf.reference | sort | uniq > /etc/unbound/unbound.conf.d/custom_blacklist.conf.d/all_merged.conf
 cp ../conf/custom_blacklist.conf /etc/unbound/unbound.conf.d/custom_blacklist.conf
 
 unbound-checkconf 1>/dev/null 2>/dev/null
