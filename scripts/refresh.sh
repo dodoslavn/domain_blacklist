@@ -23,7 +23,7 @@ if [ "$RC" -ne 0 ]
 
 cd "$(dirname "$0")"
 
-git pull
+#git pull
 
 . ../conf/config.sh
 
