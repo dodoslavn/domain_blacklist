@@ -37,16 +37,14 @@ for S in $LIST;
 
 
 cp ../tmp/*.conf /etc/unbound/unbound.conf.d/custom_blacklist.conf.d/
-echo '# Do NOT edit - config file managed by blacklisting service
-server:
-        include: /etc/unbound/unbound.conf.d/custom_blacklist.conf.d/*.conf' > /etc/unbound/unbound.conf.d/custom_blacklist.conf
+cp ../conf/custom_blacklist.conf /etc/unbound/unbound.conf.d/custom_blacklist.conf
 
 unbound-checkconf 1>/dev/null 2>/dev/null
 RC=$?
 if [ "$RC" -ne 0 ]
         then
-        echo "ERROR: Found issues in Unbound configuration files! Probably caused by custom domain blacklisting service, reverting.."
-	echo "# custom blacklisting disabled automatically, new configuration didnt work" > /etc/unbound/unbound.conf.d/custom_blacklist.conf	
+        echo "ERROR: Found issues in Unbound configuration files! Probably caused by custom domain blacklisting service, disabling.."
+		echo "# custom domain blacklisting disabled automatically, new configuration didnt work" > /etc/unbound/unbound.conf.d/custom_blacklist.conf	
         exit 0
         fi
 
