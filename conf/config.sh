@@ -2,5 +2,5 @@
 
 export SERVICE_NAME="custom-dns_blacklist"
 
-LIST="oisd stevenblack notracking"
+LIST="static oisd stevenblack notracking"
 export $LIST
