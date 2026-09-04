@@ -6,6 +6,21 @@ if [ "$( whoami )" != "root" ]
   exit 1
   fi
 
+TEST_DOMAIN="google.com"
+if [ $(dig +short $TEST_DOMAIN 2>/dev/null | wc -l) -ne 1 ]
+	then
+	echo "ERROR: You current DNS doesnt work!"
+	exit 0
+	fi
+
+ping $TEST_DOMAIN -c 3 1>/dev/null 2>/dev/null
+RC=$?
+if [ "$RC" -ne 0 ]
+	then
+	echo "ERROR: You current internet connectivity doesnt work!"
+	exit 0
+	fi
+
 cd "$(dirname "$0")"
 
 git pull
